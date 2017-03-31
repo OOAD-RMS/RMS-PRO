@@ -7,7 +7,6 @@ import java.util.List;
 public class Restaurant {
 	private static final int MAX_NUMBER_OF_TABLES = 2;
 	private List<Table> mTables;
-	//whenever a new customer comes we add him to the front of this queue
 	private Deque<Customer> mCustomerQueue; 
 	private Menu mMenu;
 	private List<Bill> billStore;
@@ -73,11 +72,7 @@ public class Restaurant {
 	public void bookATable(){
 		if (isAllTableOccupied() == false) {
 		int tableNumber = findTheEmptyTable();
-		//get the customer from the list in the FIFO order
-		//and remove him from the queue
 		currentCustomer = mCustomerQueue.pollLast();
-		//set the customer id same as table id, because a customer is identified
-		//by the table which he occupies
 		currentCustomer.setCustomerId(tableNumber);
 		currentCustomer.getOrder().setOrderId(tableNumber);
 		customerArray.add(tableNumber, currentCustomer);
