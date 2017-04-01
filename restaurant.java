@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class Restaurant {
-	private static final int MAX_NUMBER_OF_TABLES = 2;
+	private static final int MAX_TABLES = 2;
 	private List<Table> mTables;
 	private Deque<Customer> mCustomerQueue; 
 	private Menu mMenu;
@@ -22,7 +22,7 @@ public class Restaurant {
 		mCustomerQueue = new ArrayDeque<Customer>(5);
 		customerArray = new ArrayList<Customer>();
 		currentCustomer = null;
-		for(int i = 0; i < MAX_NUMBER_OF_TABLES; i++){
+		for(int i = 0; i < MAX_TABLES; i++){
 			Table t = new Table();
 			mTables.add(t);
 		}
@@ -33,7 +33,7 @@ public class Restaurant {
 	}
 	
 	public boolean isAnyTableOccupied(){
-		for(int i = 0; i < MAX_NUMBER_OF_TABLES; i++){
+		for(int i = 0; i < MAX_TABLES; i++){
 			if (mTables.get(i).isOccupied() == true){
 				return true;
 			}	
@@ -42,7 +42,7 @@ public class Restaurant {
 	}
 	
 	public int findTheEmptyTable(){
-		for (int i = 0; i < MAX_NUMBER_OF_TABLES; i++) {
+		for (int i = 0; i < MAX_TABLES; i++) {
 			if (mTables.get(i).isOccupied()== false) {
 				return i;
 			}
@@ -51,7 +51,7 @@ public class Restaurant {
 	}
 	
 	public int DisplayOccupiedTable(){
-		for (int i = 0; i < MAX_NUMBER_OF_TABLES; i++) {
+		for (int i = 0; i < MAX_TABLES; i++) {
 			if (mTables.get(i).isOccupied()== true){
 				System.out.println("Table no." + i + "is occupied");
 			}
