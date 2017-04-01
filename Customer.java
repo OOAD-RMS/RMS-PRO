@@ -9,10 +9,6 @@ public class Customer {
 		
 	}
 	
-	public Customer(int customerId){
-		
-	}
-	
 	public int getCustomerId(){
 		
 	}
