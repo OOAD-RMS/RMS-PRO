@@ -3,8 +3,6 @@ import java.util.Iterator;
 
 public class Bill {
 
-//private Order mOrder;
-
 private int mBillId;//this is the same as orderId
 
 private Customer mCustomer;
@@ -16,18 +14,6 @@ mBillId = Id;
 mCustomer = customer;
 
 }
-
-/*public Order getOrder() {
-
-return mOrder;
-
-}
-
-public void setOrder(Order mOrder) {
-
-this.mOrder = mOrder;
-
-}*/
 
 public float calculateTotal(){
 
