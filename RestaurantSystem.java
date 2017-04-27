@@ -84,12 +84,6 @@ System.out.println("Enter -9 if noone has finished...");
 
 tableId = Integer.parseInt(myScan.nextLine());
 
-//customerId = Integer.parseInt(myScan.nextLine());
-
-//Customer customerDone = restaurant.getCustomer(customerId);
-
-//customerDone.iAmDone();
-
 if(tableId != -9 ){
 
 restaurant.generateBill(tableId);
