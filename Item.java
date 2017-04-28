@@ -1,47 +1,58 @@
-import java.util.ArrayList;
+public class Item {
 
-import java.util.Iterator;
+private int mItemId;
 
-import java.util.List;
+private String mName;
 
+private float mPrice;
 
-public class Menu {
-
-private List<Item> mMenu;
-
-public Menu(){
-
-mMenu = new ArrayList<Item>();
-
-mMenu.add(new Item(11,"Tea", 5));
-
-mMenu.add(new Item(22, "Coffee", 10));
-
-mMenu.add(new Item(33, "Bread", 15));
+public Item(){
 
 }
 
-public List<Item> getMenu(){
+public Item(int id, String name, float price){
 
-return mMenu;
+mItemId = id;
+
+mName = name;
+
+mPrice = price;
+
+}
+
+public int getItemId() {
+
+return mItemId;
 
 }
 
-public void display(){
+public void setItemId(int mItemId) {
 
-int i = 0;
-
-Iterator<Item> it = mMenu.iterator();
-
-while(it.hasNext()){
-
-Item currentItem = it.next();
-
-System.out.println(i +":  " +currentItem.getItemId() + "  " + currentItem.getItemName() + "  " + currentItem.getItemPrice());
-
-i++;
+this.mItemId = mItemId;
 
 }
+
+public String getItemName() {
+
+return mName;
+
+}
+
+public void setItemName(String mName) {
+
+this.mName = mName;
+
+}
+
+public float getItemPrice() {
+
+return mPrice;
+
+}
+
+public void setItemPrice(float mPrice) {
+
+this.mPrice = mPrice;
 
 }
 

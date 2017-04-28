@@ -1,9 +1,33 @@
-
 public class Table {
 
-	public boolean isOccupied() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+private boolean mOccupied;
+
+//private int mCustomerId;
+
+public Table(){
+
+mOccupied = false;
+
+}
+
+public boolean isOccupied(){
+
+return
+
+mOccupied == true;
+
+}
+
+public void bookTable(){
+
+mOccupied = true;
+
+}
+
+public void releaseTable(){
+
+mOccupied = false;
+
+}
 
 }

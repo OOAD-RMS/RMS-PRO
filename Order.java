@@ -14,7 +14,6 @@ public Order(){
 
 mOrderId = 0;
 
-//mItemOrder = null;
 
 }
 
@@ -24,15 +23,11 @@ mOrderId = orderId;
 
 }
 
-
-
 public List<ItemOrder> getItemOrder() {
 
 return mItemOrder;
 
 }
-
-
 
 public void setItemOrder(List<ItemOrder> mItemOrder) {
 
@@ -40,15 +35,11 @@ this.mItemOrder = mItemOrder;
 
 }
 
-
-
 public int getOrderId() {
 
 return mOrderId;
 
 }
-
-
 
 public void setOrderId(int mOrderId) {
 

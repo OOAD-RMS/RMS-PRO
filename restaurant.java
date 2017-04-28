@@ -79,17 +79,5 @@ public class Restaurant {
 		mTables.get(tableNumber).bookTable();
 		System.out.println(currentCustomer.getCustomerName()+"has been given table number:"+ tableNumbere);
 		}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
