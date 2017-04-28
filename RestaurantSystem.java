@@ -2,142 +2,139 @@ import java.util.Scanner;
 
 public class RestaurantSystem {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
-Scanner myScan = new Scanner(System.in);
+		Scanner myScan = new Scanner(System.in);
 
-String s = "Y";
+		String s = "Y";
 
-Restaurant restaurant = Restaurant.getRestaurant();
+		Restaurant restaurant = Restaurant.getRestaurant();
 
-do{
+		do {
 
-int tableId = 0;
+			int tableId = 0;
 
-int customerId = 0;
+			int customerId = 0;
 
-Customer customer = null;
+			Customer customer = null;
 
-System.out.println("Is there a new customer?");
+			System.out.println("Is there a new customer?");
 
-String ans = myScan.nextLine();
+			String ans = myScan.nextLine();
 
-if(ans.equalsIgnoreCase("Y")){
+			if (ans.equalsIgnoreCase("Y")) {
 
-customer = new Customer();
+				customer = new Customer();
 
-System.out.println("Please enter customer name...");
+				System.out.println("Please enter customer name...");
 
-String customerName = myScan.nextLine();
+				String customerName = myScan.nextLine();
 
-customer.setCustomerName(customerName);
+				customer.setCustomerName(customerName);
 
-restaurant.addNewCustomer(customer);
+				restaurant.addNewCustomer(customer);
 
-if(restaurant.isAllTableOccupied() == false){
+				if (restaurant.isAllTableOccupied() == false) {
 
-restaurant.bookATable();
+					restaurant.bookATable();
 
-restaurant.getMenu().display();
+					restaurant.getMenu().display();
 
-System.out.println("Choose Menu from the above List");
+					System.out.println("Choose Menu from the above List");
 
-System.out.println("How many items do you want to order?");
+					System.out.println("How many items do you want to order?");
 
-int number_of_items = myScan.nextInt();
+					int number_of_items = myScan.nextInt();
 
-for (int i = 0; i<number_of_items; i++){
+					for (int i = 0; i < number_of_items; i++) {
 
-System.out.println("Choose from the numbers at the leftmost position");
+						System.out.println("Choose from the numbers at the leftmost position");
 
-int item_position = myScan.nextInt();
+						int item_position = myScan.nextInt();
 
-System.out.println("How many plates of menu item " + item_position + " you want to order");
+						System.out.println("How many plates of menu item " + item_position + " you want to order");
 
-int number_of_plates = myScan.nextInt();
+						int number_of_plates = myScan.nextInt();
 
-if(i == number_of_items - 1){
+						if (i == number_of_items - 1) {
 
-myScan.nextLine();
+							myScan.nextLine();
 
-}
+						}
 
-Item item = restaurant.getMenu().getMenu().get(item_position);
+						Item item = restaurant.getMenu().getMenu().get(item_position);
 
-customer.giveOrder(item, number_of_plates);
+						customer.giveOrder(item, number_of_plates);
 
-}
+					}
 
-}
+				}
 
-else {
+				else {
 
-System.out.println("Sorry all tables are occupied... Please wait...");
+					System.out.println("Sorry all tables are occupied... Please wait...");
 
-System.out.println("Has anybody finished?");
+					System.out.println("Has anybody finished?");
 
-System.out.println("Occupied tables are:");
+					System.out.println("Occupied tables are:");
 
-Restaurant.getRestaurant().displayOccupiedTable();
+					Restaurant.getRestaurant().displayOccupiedTable();
 
-System.out.println("Enter -9 if noone has finished...");
+					System.out.println("Enter -9 if noone has finished...");
 
-tableId = Integer.parseInt(myScan.nextLine());
+					tableId = Integer.parseInt(myScan.nextLine());
 
-if(tableId != -9 ){
+					if (tableId != -9) {
 
-restaurant.generateBill(tableId);
+						restaurant.generateBill(tableId);
 
-restaurant.releaseTable(tableId);
+						restaurant.releaseTable(tableId);
 
-}
+					}
 
-}
+				}
 
-}
+			}
 
-else {
+			else {
 
-if(restaurant.isAnyTableOccupied() == true){
+				if (restaurant.isAnyTableOccupied() == true) {
 
-//System.out.println("There are still some customers");
+					System.out.println("Has anybody finished?");
 
-System.out.println("Has anybody finished?");
+					System.out.println("Enter -9 if noone has finished...");
 
-System.out.println("Enter -9 if noone has finished...");
+					System.out.println("Occupied tables are:");
 
-System.out.println("Occupied tables are:");
+					Restaurant.getRestaurant().displayOccupiedTable();
 
-Restaurant.getRestaurant().displayOccupiedTable();
+					int numberTable = myScan.nextInt();
 
-int numberTable = myScan.nextInt();
+					myScan.nextLine();
 
-myScan.nextLine();
+					if (numberTable != -9) {
 
-if(numberTable != -9){
+						restaurant.generateBill(numberTable);
 
-restaurant.generateBill(numberTable);
+						restaurant.releaseTable(numberTable);
 
-restaurant.releaseTable(numberTable);
+					}
 
-}
+				}
 
-}
+			}
 
-}
+			System.out.println("Do you want to continue?");
 
-System.out.println("Do you want to continue?");
+			s = myScan.nextLine();
 
-s = myScan.nextLine();
+			if (s.equalsIgnoreCase("N")) {
 
-if(s.equalsIgnoreCase("N")){
+				System.exit(0);
 
-System.exit(0);
+			}
 
-}
+		} while (s.equalsIgnoreCase("Y"));
 
-}while (s.equalsIgnoreCase("Y"));
-
-}
-
+	}
 }
