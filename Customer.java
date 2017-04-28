@@ -1,69 +1,74 @@
-public class Customer{
+public class Customer {
 
-private int mCustomerId; //this is same as Table id. Each customer is identified
+	private int mCustomerId; // this is same as Table id. Each customer is
+								// identified
 
-private Order mOrder;//by the table they occupied
+	private Order mOrder;// by the table they occupied
 
-private String mCustomerName;
+	private String mCustomerName;
 
-public Customer(){
+	public Customer() {
 
-mCustomerId = 0;
+		mCustomerId = 0;
 
-mOrder = new Order(mCustomerId);
+		mOrder = new Order(mCustomerId);
 
-//addObserver(Restaurant.getRestaurant());
+	}
 
-}
+	public Customer(int customerId) {
 
-public Customer(int customerId){
+		mCustomerId = customerId;
 
-mCustomerId = customerId;
+		mOrder = new Order(customerId);
 
-mOrder = new Order(customerId);
+	}
 
-}
+	public int getCustomerId() {
 
-public int getCustomerId() {
+		return mCustomerId;
 
-return mCustomerId;
+	}
 
-}
-public void setCustomerId(int mCustomerId) {
+	public void setCustomerId(int mCustomerId) {
 
-this.mCustomerId = mCustomerId;
+		this.mCustomerId = mCustomerId;
 
-}
-public void giveOrder(Item item, int numberOfPlates){
+	}
 
-//Order newOrder = new Order(mCustomerId);
+	public void giveOrder(Item item, int numberOfPlates) {
 
-ItemOrder newItemOrder = new ItemOrder(item,  numberOfPlates);
+		ItemOrder newItemOrder = new ItemOrder(item, numberOfPlates);
 
-mOrder.addOrder(newItemOrder);
+		mOrder.addOrder(newItemOrder);
 
-}
-public void iAmDone(){
+	}
 
-}
-public Order getOrder() {
+	public void iAmDone() {
 
-return mOrder;
+	}
 
-}
-public void setOrder(Order mOrder) {
+	public Order getOrder() {
 
-this.mOrder = mOrder;
+		return mOrder;
 
-}
-public String getCustomerName() {
+	}
 
-return mCustomerName;
+	public void setOrder(Order mOrder) {
 
-}
-public void setCustomerName(String mCustomerName) {
+		this.mOrder = mOrder;
 
-this.mCustomerName = mCustomerName;
+	}
 
-}
+	public String getCustomerName() {
+
+		return mCustomerName;
+
+	}
+
+	public void setCustomerName(String mCustomerName) {
+
+		this.mCustomerName = mCustomerName;
+
+	}
+
 }
