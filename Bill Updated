@@ -1,0 +1,94 @@
++import java.util.Iterator;
+  
+ -//public class Bill {
+ -	import java.util.Iterator;
+  
+ -	public class Bill {
+ +public class Bill {
+  
+ -	//private Order mOrder;
+ +//private Order mOrder;
+  
+ -	private int mBillId;//this is the same as orderId
+ +private int mBillId;//this is the same as orderId
+  
+ -	private Customer mCustomer;
+ +private Customer mCustomer;
+  
+ -	public Bill(int Id, Customer customer){
+ +public Bill(int Id, Customer customer){
+  
+ -	mBillId = Id;
+ +mBillId = Id;
+  
+ -	mCustomer = customer;
+ +mCustomer = customer;
+  
+ -	}
+ -
+ -	/*public Order getOrder() {
+ +}
+  
+ -	return mOrder;
+ +/*public Order getOrder() {
+  
+ -	}
+ +return mOrder;
+  
+ -	public void setOrder(Order mOrder) {
+ +}
+  
+ -	this.mOrder = mOrder;
+ +public void setOrder(Order mOrder) {
+  
+ -	}*/
+ +this.mOrder = mOrder;
+  
+ -	public float calculateTotal(){
+ +}*/
+  
+ -	float retValue = 0;
+ +public float calculateTotal(){
+  
+ -	Iterator<ItemOrder> it = mCustomer.getOrder().getItemOrder().iterator();
+ +float retValue = 0;
+  
+ -	while (it.hasNext() == true){
+ +Iterator<ItemOrder> it = mCustomer.getOrder().getItemOrder().iterator();
+  
+ -	ItemOrder element = it.next();
+ +while (it.hasNext() == true){
+  
+ -	retValue+= (element.getItem().getItemPrice())* (element.getNumberOfPlates());
+ +ItemOrder element = it.next();
+  
+ -	}
+ +retValue+= (element.getItem().getItemPrice())* (element.getNumberOfPlates());
+  
+ -	return retValue;
+ +}
+  
+ -	}
+ +return retValue;
+  
+ -	public int getBillId() {
+ +}
+  
+ -	return mBillId;
+ +public int getBillId() {
+  
+ -	}
+ +return mBillId;
+  
+ -	public void setBillId(int mBillId) {
+ +}
+  
+ -	this.mBillId = mBillId;
+ +public void setBillId(int mBillId) {
+  
+ -	}
+ +this.mBillId = mBillId;
+  
+  }
+ +
+ +} 
